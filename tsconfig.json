@@ -17,6 +17,9 @@
         "dist/ng-alt-snotify/ng-alt-snotify",
         "dist/ng-alt-snotify"
       ],
+      "ng2-eonasdan-datetimepickerV16": [
+        "dist/ng2-eonasdan-datetimepicker-v16"
+      ],
       "ngx-dropzone-alt": [
         "dist/ngx-dropzone-alt"
       ]

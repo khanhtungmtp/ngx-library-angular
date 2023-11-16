@@ -31,9 +31,20 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/moment/min/moment.min.js",
+              "node_modules/moment/min/moment-with-locales.min.js",
+              "node_modules/eonasdan-bootstrap-datetimepicker/src/js/bootstrap-datetimepicker.js"
+            ],
+            "allowedCommonJsDependencies": [
+              "jquery"
+            ]
           },
           "configurations": {
             "production": {
@@ -149,6 +160,39 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "tsConfig": "projects/ngx-dropzone-alt/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "ng2-eonasdan-datetimepickerV16": {
+      "projectType": "library",
+      "root": "projects/ng2-eonasdan-datetimepicker-v16",
+      "sourceRoot": "projects/ng2-eonasdan-datetimepicker-v16/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/ng2-eonasdan-datetimepicker-v16/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ng2-eonasdan-datetimepicker-v16/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ng2-eonasdan-datetimepicker-v16/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/ng2-eonasdan-datetimepicker-v16/tsconfig.spec.json",
             "polyfills": [
               "zone.js",
               "zone.js/testing"
