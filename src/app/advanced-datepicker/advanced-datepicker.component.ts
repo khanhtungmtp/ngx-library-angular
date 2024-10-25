@@ -21,6 +21,10 @@ export class AdvancedDatepickerComponent implements OnInit {
     } else {
       console.error('Datepicker is not initialized.');
     }
+
+    console.log(' this.dp: ',  this.dp);
+    // this.dateModel
+    console.log('this.dateModel: ', this.dateModel);
   }
 
 }

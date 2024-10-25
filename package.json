@@ -1,14 +1,14 @@
 {
-  "name": "ngx-snotify-sdteam-example",
+  "name": "ng2-eonasdan-datetimepickerv16",
   "version": "16.0.5",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve ngx-snotify-sdteam-example",
-    "example:build": "ng build ngx-snotify-sdteam-example",
-    "example:build:prod": "ng build ngx-snotify-sdteam-example --base-href=/ngx-snotify-sdteam/ --output-path=demo/",
-    "lib:build": "ng build ngx-snotify-sdteam && cd dist/ngx-snotify-sdteam && npm pack",
-    "lib:build:prod": "ng build ngx-snotify-sdteam && cd dist/ngx-snotify-sdteam && npm pack",
-    "lib:build:prod:publish": "ng build ngx-snotify-sdteam && cd dist/ngx-snotify-sdteam && npm pack && npm publish"
+    "start": "ng serve ng2-eonasdan-datetimepickerv16",
+    "example:build": "ng build ng2-eonasdan-datetimepickerv16",
+    "example:build:prod": "ng build ng2-eonasdan-datetimepickerv16 --base-href=/ng2-eonasdan-datetimepickerv16/ --output-path=demo/",
+   "lib:build": "ng build ng2-eonasdan-datetimepickerV16 && cd dist/ng2-eonasdan-datetimepickerV16 && npm pack",
+    "lib:build:prod": "ng build ng2-eonasdan-datetimepickerv16 && cd dist/ng2-eonasdan-datetimepickerv16 && npm pack",
+    "lib:build:prod:publish": "ng build ng2-eonasdan-datetimepickerv16 && cd dist/ng2-eonasdan-datetimepickerv16 && npm pack && npm publish"
   },
   "dependencies": {
     "@angular/animations": "~16.2.3",

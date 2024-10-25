@@ -9,13 +9,14 @@ import * as moment from 'moment';
 export class LinkedDatepickersComponent implements OnInit {
   moment = require('moment');
 
-  startDate = moment('2015-11-18T00:00Z').toDate();
-  endDate = moment('2015-11-20T00:00Z').toDate();
+  startDate = null;
+  endDate = null;
 
   // Now startDate and endDate are Date objects
-
-  startOptions: any = { format: 'DD.MM.YYYY' };
-  endOptions: any = { format: 'DD.MM.YYYY' };
+  startOptions: any = { format: 'YYYY/MM/DD HH:mm', showClear: true };
+  endOptions: any = { format: 'YYYY/MM/DD HH:mm', showClear: true };
+  // startOptions: any = { format: 'DD.MM.YYYY' };
+  // endOptions: any = { format: 'DD.MM.YYYY' };
   constructor() { }
 
   ngOnInit() {

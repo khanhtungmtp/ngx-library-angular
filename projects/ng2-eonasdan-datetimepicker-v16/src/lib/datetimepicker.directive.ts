@@ -64,6 +64,12 @@ export class DateTimePickerDirective implements OnInit, OnDestroy, DoCheck, Cont
   }
 
   @HostListener('blur') onBlur() {
+    const selectedDate = this.dpElement.data('DateTimePicker').date();
+    if (selectedDate && selectedDate.isValid()) {
+      this.value = selectedDate;  // Cập nhật lại giá trị khi blur
+    } else {
+      this.value = null;
+    }
     this._onTouched();
   }
 
@@ -72,16 +78,18 @@ export class DateTimePickerDirective implements OnInit, OnDestroy, DoCheck, Cont
   }
 
   set value(val) {
-    this._value = val;
-    this._onChange(val);
-    if (val) {
-      this._onTouched();
+    if (!val || val === undefined) {
+      this._value = null;  // Hoặc gán giá trị mặc định
+    } else {
+      this._value = val;
     }
+
+    this._onChange(this._value);  // Đảm bảo giá trị đã được xử lý
     this.changeDetector.markForCheck();
   }
 
   writeValue(value) {
-    if (!value) {
+    if (!value || value === undefined) {
       this._value = null;
     } else {
       this._value = value;
@@ -123,7 +131,7 @@ export class DateTimePickerDirective implements OnInit, OnDestroy, DoCheck, Cont
     this.dpinitialized = true;
     this.dpElement.datetimepicker(this.options);
     this.datepicker = this.dpElement.data('DateTimePicker');
-    if (this.datepicker) {
+    if (this.datepicker && this.value) {
       this.datepicker.date(this.value);
     }
   }
